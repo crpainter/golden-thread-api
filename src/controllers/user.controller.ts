@@ -9,12 +9,13 @@ export class UserController {
     @repository(UserRepository.name) private userRepo: UserRepository
   ) { }
 
-  @post('/user:id')
-  async findUser(@requestBody() idToBeFound: string): Promise<User | null> {
+  @get('/user/:id')
+  async findUser(@requestBody() idToBeFound: number): Promise<User | null> {
     var AllUsers = await this.userRepo.find();
     let foundUser: User | null = null;
-    for (var i=0;i>AllUsers.length;i++) {
-      if(AllUsers[i].id.valueOf() == idToBeFound.valueOf()){
+    for (var i=0;i<AllUsers.length;i++) {
+      var idtocompare = AllUsers[i].id;
+      if(idtocompare == idToBeFound){
         foundUser = AllUsers[i];
         break;
       }

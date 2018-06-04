@@ -4,31 +4,25 @@ import { Charity } from '../models/charity';
 @model()
 export class User extends Entity {
     @property({
-        type: 'string',
+        type: 'number',
         id: true
     })
-    id: string;
+    id?: number;
 
     @property({
         type: 'string',
         required: true
     })
-    name: string;
+    username: string;
 
     @property({
         type: 'string'
     })
     password: string;
 
-    @property({
-        type: 'Array<Charity>',
-    })
-    charitiesDonatedTo: Array<Charity>;
+    @property.array(Charity) charitiesDonatedTo: Charity[];
 
-    @property({
-        type: 'Array<Charity>',
-    })
-    charitiesNotDonatedTo: Array<Charity>;
+    @property.array(Charity) charitiesNotDonatedTo: Charity[];
 
     getId() {
         return this.id;
