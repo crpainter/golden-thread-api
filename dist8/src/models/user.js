@@ -10,8 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const repository_1 = require("@loopback/repository");
-const charity_1 = require("../models/charity");
 let User = class User extends repository_1.Entity {
+    // Working on adding the arrays of charities from my webapp here.
+    //@property.array(Charity) charitiesDonatedTo: Charity[];
+    //@property.array(Charity) charitiesNotDonatedTo: Charity[];
     getId() {
         return this.id;
     }
@@ -36,14 +38,6 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);
-__decorate([
-    repository_1.property.array(charity_1.Charity),
-    __metadata("design:type", Array)
-], User.prototype, "charitiesDonatedTo", void 0);
-__decorate([
-    repository_1.property.array(charity_1.Charity),
-    __metadata("design:type", Array)
-], User.prototype, "charitiesNotDonatedTo", void 0);
 User = __decorate([
     repository_1.model()
 ], User);

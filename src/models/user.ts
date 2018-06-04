@@ -20,9 +20,9 @@ export class User extends Entity {
     })
     password: string;
 
-    @property.array(Charity) charitiesDonatedTo: Charity[];
-
-    @property.array(Charity) charitiesNotDonatedTo: Charity[];
+    // Working on adding the arrays of charities from my webapp here.
+    //@property.array(Charity) charitiesDonatedTo: Charity[];
+    //@property.array(Charity) charitiesNotDonatedTo: Charity[];
 
     getId() {
         return this.id;
