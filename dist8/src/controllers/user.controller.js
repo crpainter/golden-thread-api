@@ -36,7 +36,7 @@ let UserController = class UserController {
     }
 };
 __decorate([
-    rest_1.get('/user/:id'),
+    rest_1.post('/user/:id'),
     __param(0, rest_1.requestBody()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),

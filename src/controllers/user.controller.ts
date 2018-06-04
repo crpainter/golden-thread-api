@@ -9,7 +9,7 @@ export class UserController {
     @repository(UserRepository.name) private userRepo: UserRepository
   ) { }
 
-  @get('/user/:id')
+  @post('/user/:id')
   async findUser(@requestBody() idToBeFound: number): Promise<User | null> {
     var AllUsers = await this.userRepo.find();
     let foundUser: User | null = null;
