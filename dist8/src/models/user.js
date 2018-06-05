@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const repository_1 = require("@loopback/repository");
 let User = class User extends repository_1.Entity {
     // Working on adding the arrays of charities from my webapp here.
-    //@property.array(Charity) charitiesDonatedTo: Charity[];
-    //@property.array(Charity) charitiesNotDonatedTo: Charity[];
+    // @property.array(Charity) charitiesDonatedTo: Charity[];
+    // @property.array(Charity) charitiesNotDonatedTo: Charity[];
     getId() {
         return this.id;
     }
