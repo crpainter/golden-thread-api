@@ -39,4 +39,16 @@ export class ProjectsController {
     var array = await this.projectRepo.find();
     return array.filter(checkId);
   }
+
+  @post('/charity/{charity_id}/addProject')
+  async registerUser(
+    @param.path.number('charity_id') charity_id: number,
+    @requestBody() name: string
+  ) {
+    var project: CharityProject = new CharityProject;
+    project.charity_id = charity_id
+    project.name = name;
+    project.budget = 0;
+    return await this.projectRepo.create(project);
+    }
 }

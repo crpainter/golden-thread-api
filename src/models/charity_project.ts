@@ -14,6 +14,11 @@ export class CharityProject extends Entity {
     charity_id: number;
 
     @property({
+        type: 'string'
+    })
+    name: string;
+
+    @property({
         type: 'number',
     })
     budget: number;
