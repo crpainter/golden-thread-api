@@ -5,4 +5,5 @@ export declare class ProjectsController {
     constructor(projectRepo: ProjectRepository);
     findProject(charity_id: number, idToBeFound: number): Promise<CharityProject | null>;
     getAllProjectsForCharity(charityImLookingFor: number): Promise<Array<CharityProject>>;
+    registerUser(charity_id: number, name: string): Promise<CharityProject>;
 }

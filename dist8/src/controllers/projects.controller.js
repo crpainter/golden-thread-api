@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const repository_1 = require("@loopback/repository");
 const project_repository_1 = require("../repositories/project.repository");
 const rest_1 = require("@loopback/rest");
+const charity_project_1 = require("../models/charity_project");
 let ProjectsController = class ProjectsController {
     constructor(projectRepo) {
         this.projectRepo = projectRepo;
@@ -42,6 +43,14 @@ let ProjectsController = class ProjectsController {
         var array = await this.projectRepo.find();
         return array.filter(checkId);
     }
+    async registerUser(charity_id, name) {
+        var project = new charity_project_1.CharityProject;
+        project.charity_id = charity_id;
+        project.name = name;
+        project.budget = 0;
+        console.log('yo');
+        return await this.projectRepo.create(project);
+    }
 };
 __decorate([
     rest_1.get('/charity/{charity_id}/project/{project_id}'),
@@ -58,6 +67,14 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], ProjectsController.prototype, "getAllProjectsForCharity", null);
+__decorate([
+    rest_1.post('/charity/{charity_id}/addProject'),
+    __param(0, rest_1.param.path.number('charity_id')),
+    __param(1, rest_1.requestBody()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, String]),
+    __metadata("design:returntype", Promise)
+], ProjectsController.prototype, "registerUser", null);
 ProjectsController = __decorate([
     __param(0, repository_1.repository(project_repository_1.ProjectRepository.name)),
     __metadata("design:paramtypes", [project_repository_1.ProjectRepository])

@@ -5,4 +5,5 @@ export declare class CharitiesController {
     constructor(charityRepo: CharityRepository);
     findCharity(idToBeFound: number): Promise<Charity | null>;
     getAllUsers(): Promise<Array<Charity>>;
+    addCharity(charity: Charity): Promise<Charity>;
 }

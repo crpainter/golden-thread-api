@@ -49,6 +49,7 @@ export class ProjectsController {
     project.charity_id = charity_id
     project.name = name;
     project.budget = 0;
+    console.log('yo')
     return await this.projectRepo.create(project);
     }
 }

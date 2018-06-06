@@ -27,4 +27,9 @@ export class CharitiesController {
   async getAllUsers(): Promise<Array<Charity>> {
     return await this.charityRepo.find();
   }
+
+  @post('/addCharity')
+  async addCharity(@requestBody() charity: Charity) {
+    return await this.charityRepo.create(charity);
+  }
 }

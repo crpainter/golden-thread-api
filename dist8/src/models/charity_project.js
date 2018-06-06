@@ -30,6 +30,12 @@ __decorate([
 ], CharityProject.prototype, "charity_id", void 0);
 __decorate([
     repository_1.property({
+        type: 'string'
+    }),
+    __metadata("design:type", String)
+], CharityProject.prototype, "name", void 0);
+__decorate([
+    repository_1.property({
         type: 'number',
     }),
     __metadata("design:type", Number)
