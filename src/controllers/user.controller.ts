@@ -1,6 +1,6 @@
 import { repository } from "@loopback/repository";
 import { UserRepository } from "../repositories/user.repository";
-import { post, get, requestBody } from "@loopback/rest";
+import { post, get, requestBody, param } from "@loopback/rest";
 import { User } from "../models/user";
 
 export class UserController {
@@ -9,8 +9,8 @@ export class UserController {
     @repository(UserRepository.name) private userRepo: UserRepository
   ) { }
 
-  @post('/user/:id')
-  async findUser(@requestBody() idToBeFound: number): Promise<User | null> {
+  @get('/user/{id}')
+  async findUser(@param.path.number('id') idToBeFound: number): Promise<User | null> {
     var AllUsers = await this.userRepo.find();
     let foundUser: User | null = null;
     for (var i=0;i<AllUsers.length;i++) {
@@ -20,6 +20,7 @@ export class UserController {
         break;
       }
     }
+  
     return foundUser
   }
 
