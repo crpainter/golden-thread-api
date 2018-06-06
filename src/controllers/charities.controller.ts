@@ -9,7 +9,7 @@ export class CharitiesController {
     @repository(CharityRepository.name) private charityRepo: CharityRepository
   ) { }
 
-  @get('/charity/:id')
+  @get('/charity/{id}')
   async findCharity(@param.path.number('id') idToBeFound: number): Promise<Charity | null> {
     var AllCharities = await this.charityRepo.find();
     let foundCharity: Charity | null = null;

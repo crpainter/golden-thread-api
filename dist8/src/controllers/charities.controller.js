@@ -40,7 +40,7 @@ let CharitiesController = class CharitiesController {
     }
 };
 __decorate([
-    rest_1.get('/charity/:id'),
+    rest_1.get('/charity/{id}'),
     __param(0, rest_1.param.path.number('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),

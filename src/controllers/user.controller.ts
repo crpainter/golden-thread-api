@@ -24,15 +24,6 @@ export class UserController {
     return foundUser
   }
 
-  @get('/users/{user_id}/donations')
-  async getDonationsByUserId(
-    @param.path.number('user_id') userId: number,
-    @param.query.date('date_from') dateFrom: Date
-  ) {
-    console.log(userId);
-    console.log(dateFrom)
-  }
-
   @get('/user')
   async getAllUsers(): Promise<Array<User>> {
     return await this.userRepo.find();
