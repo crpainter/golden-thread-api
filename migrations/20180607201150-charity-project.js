@@ -18,7 +18,8 @@ exports.up = function(db, done) {
   db.createTable('charity_project', {
   id: {
     type: 'int',
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
 },
 
 charity_id: {

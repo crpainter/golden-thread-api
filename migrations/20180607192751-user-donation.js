@@ -18,7 +18,8 @@ exports.up = function(db, done) {
   db.createTable('user_donation', {
   id: {
     type: 'int',
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
 },
 
   user_id: {

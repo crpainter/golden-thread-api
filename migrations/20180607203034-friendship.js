@@ -18,7 +18,9 @@ exports.up = function(db, done) {
   db.createTable('friendship', {
   id: {
     type: 'int',
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
+    
 },
 
 user_id: {
